@@ -1,86 +1,55 @@
-<?php require_once 'includes/config.php'; ?>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-    <header class="navbar">
-        <div class="container">
-            <a href="index.php" class="logo">Магазин игрушек JoyToy</a>
-            <nav>
-                <a href="login.php" class="btn">Вход</a>
-                <a href="register.php" class="btn">Регистрация</a>
-            </nav>
-        </div>
-    </header>
+<?php
+require_once '../includes/functions.php';
+require_once '../includes/auth.php';
+header('Content-Type: application/json');
 
-    <main class="container">
-        <div class="form-container">
-            <h2>Регистрация</h2>
-            <form id="registerForm">
-                <div class="form-group">
-                    <label for="username">Имя пользователя</label>
-                    <input type="text" id="username" name="username" placeholder="Введите ваше имя" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Пароль</label>
-                    <input type="password" id="password" name="password" placeholder="Введите пароль" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirm_password">Подтверждение пароля</label>
-                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Повторите пароль" required>
-                </div>
-                
-                <div class="checkbox-group">
-                    <input type="checkbox" id="consent" name="consent">
-                    <label for="consent" class="checkmark"></label>
-                    <span>Я согласен(на) на обработку персональных данных</span>
-                </div>
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['success' => false, 'message' => 'Метод не разрешён']);
+    exit;
+}
 
-                <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-                <div id="registerMessage" class="message"></div>
-            </form>
-            <p>Уже есть аккаунт? <a href="login.php">Войдите</a></p>
-        </div>
-    </main>
+$username = trim($_POST['username'] ?? '');
+$password = $_POST['password'] ?? '';
+$confirm = $_POST['confirm_password'] ?? '';
 
-    <script src="assets/js/script.js"></script>
-    <script>
-        document.getElementById('registerForm').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const password = document.getElementById('password').value;
-            const consent = document.getElementById('consent').checked;
-            const msgDiv = document.getElementById('registerMessage');
-            
-            let errors = [];
-            if (password.length < 4) {
-                errors.push('Пароль должен быть не менее 4 символов.');
-            }
-            if (!consent) {
-                errors.push('Необходимо согласие на обработку персональных данных.');
-            }
-            
-            if (errors.length > 0) {
-                msgDiv.innerHTML = `<span style="color: red;">${errors.join(' ')}</span>`;
-                return;
-            }
-            
-            const formData = new FormData(e.target);
-            formData.delete('consent');
-            const response = await fetch('api/register.php', { method: 'POST', body: formData });
-            const result = await response.json();
-            
-            if (result.success) {
-                window.location.href = result.redirect;
-            } else {
-                msgDiv.innerHTML = `<span style="color: red;">${result.message}</span>`;
-            }
-        });
-    </script>
-</body>
-</html>
+if (empty($username) || empty($password)) {
+    echo json_encode(['success' => false, 'message' => 'Заполните все поля']);
+    exit;
+}
+if ($password !== $confirm) {
+    echo json_encode(['success' => false, 'message' => 'Пароли не совпадают']);
+    exit;
+}
+if (strlen($password) < 4) {
+    echo json_encode(['success' => false, 'message' => 'Пароль должен быть не менее 4 символов']);
+    exit;
+}
+
+$users = loadData(USERS_FILE);
+foreach ($users as $u) {
+    if ($u['username'] === $username) {
+        echo json_encode(['success' => false, 'message' => 'Пользователь с таким именем уже существует']);
+        exit;
+    }
+}
+
+$newId = generateId($users);
+$newUser = [
+    'id' => $newId,
+    'username' => $username,
+    'password_hash' => password_hash($password, PASSWORD_DEFAULT),
+    'role' => 'user',
+    'created_at' => date('Y-m-d H:i:s')
+];
+$users[] = $newUser;
+saveData(USERS_FILE, $users);
+
+startSecureSession();
+$_SESSION['user_id'] = $newId;
+$_SESSION['username'] = $username;
+$_SESSION['role'] = 'user';
+
+logEvent('registration', $newId, 'username=' . $username);
+
+echo json_encode(['success' => true, 'redirect' => 'index.php']);

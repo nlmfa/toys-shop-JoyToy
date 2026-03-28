@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "user_id": 2,
+        "date": "2026-03-22 18:10:29",
+        "total": 3340,
+        "method": "cash",
+        "items": [
+            {
+                "product_id": 1,
+                "name": "Плюшевый мишка \"Teddies\" 30 см",
+                "price": 1890,
+                "quantity": 1
+            },
+            {
+                "product_id": 2,
+                "name": "Заяц розовый (Aurora) 25 см",
+                "price": 1450,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "user_id": 2,
+        "date": "2026-03-23 00:14:15",
+        "total": 7300,
+        "method": "cash",
+        "items": [
+            {
+                "product_id": 3,
+                "name": "Собачка-подушка \"Hund\" 40 см",
+                "price": 2100,
+                "quantity": 1
+            },
+            {
+                "product_id": 8,
+                "name": "Магнитный конструктор \"Magformers Wow\" (30 дет.)",
+                "price": 5200,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "user_id": 7,
+        "date": "2026-03-25 20:53:12",
+        "total": 1890,
+        "method": "cash",
+        "items": [
+            {
+                "product_id": 1,
+                "name": "Плюшевый мишка \"Teddies\" 30 см",
+                "price": 1890,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "user_id": 7,
+        "date": "2026-03-25 20:53:27",
+        "total": 2490,
+        "method": "card",
+        "items": [
+            {
+                "product_id": 4,
+                "name": "Единорог радужный (Aurora) 35 см",
+                "price": 2490,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "user_id": 9,
+        "date": "2026-03-25 22:18:19",
+        "total": 1890,
+        "method": "cash",
+        "items": [
+            {
+                "product_id": 1,
+                "name": "Плюшевый мишка \"Teddies\" 30 см",
+                "price": 1890,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "user_id": 9,
+        "date": "2026-03-25 22:18:38",
+        "total": 11200,
+        "method": "card",
+        "items": [
+            {
+                "product_id": 6,
+                "name": "LEGO Duplo \"Супермаркет\" (10434)",
+                "price": 10250,
+                "quantity": 1
+            },
+            {
+                "product_id": 12,
+                "name": "Пожарная машина с лестницей (Junior Motors) 1:48",
+                "price": 950,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "user_id": 10,
+        "date": "2026-03-25 22:33:28",
+        "total": 1890,
+        "method": "cash",
+        "items": [
+            {
+                "product_id": 1,
+                "name": "Плюшевый мишка \"Teddies\" 30 см",
+                "price": 1890,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "user_id": 10,
+        "date": "2026-03-25 22:33:46",
+        "total": 4990,
+        "method": "card",
+        "items": [
+            {
+                "product_id": 7,
+                "name": "LEGO City \"Полицейский участок\" (60316)",
+                "price": 4990,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "user_id": 11,
+        "date": "2026-03-25 22:40:26",
+        "total": 7770,
+        "method": "cash",
+        "items": [
+            {
+                "product_id": 1,
+                "name": "Плюшевый мишка \"Teddies\" 30 см",
+                "price": 1890,
+                "quantity": 1
+            },
+            {
+                "product_id": 7,
+                "name": "LEGO City \"Полицейский участок\" (60316)",
+                "price": 4990,
+                "quantity": 1
+            },
+            {
+                "product_id": 10,
+                "name": "Деревянный конструктор \"Томик\" (43 дет.)",
+                "price": 890,
+                "quantity": 1
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "user_id": 11,
+        "date": "2026-03-25 22:40:40",
+        "total": 2490,
+        "method": "card",
+        "items": [
+            {
+                "product_id": 16,
+                "name": "Кукла Barbie \"Розовое платье\" 29 см",
+                "price": 2490,
+                "quantity": 1
+            }
+        ]
+    }
+]

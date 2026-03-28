@@ -1,0 +1,79 @@
+[
+    {
+        "id": 1,
+        "username": "admin",
+        "password_hash": "$2y$10$hBlwsHYt86K9c.woG.u6J.14f9k9FAasU0bU6V2za8wSanS0yiJLW",
+        "role": "admin",
+        "created_at": "2026-03-08 12:00:00"
+    },
+    {
+        "id": 2,
+        "username": "Кристина",
+        "password_hash": "$2y$10$JvCzV42cT.fDbqXAbKm7I.O7AGjTNhhHo0p45T93iOQkZhQnksS32",
+        "role": "user",
+        "created_at": "2026-03-15 09:45:09"
+    },
+    {
+        "id": 3,
+        "username": "МЯУ",
+        "password_hash": "$2y$10$1CQftuPnnPCxZusldVhbNO5U6xwdegAoHhTn8KcSI\/DO.hzN.BiwG",
+        "role": "user",
+        "created_at": "2026-03-21 15:14:20"
+    },
+    {
+        "id": 4,
+        "username": "Виталий",
+        "password_hash": "$2y$10$4pa1Bx29Io5otiJhNJ1tzu.3T0lpe\/NN3zKrqUJTpUVoJZF17ZCEm",
+        "role": "user",
+        "created_at": "2026-03-22 16:31:34"
+    },
+    {
+        "id": 5,
+        "username": "Лиза",
+        "password_hash": "$2y$10$dqzmJDRt2hGSHr6vdyu4xeSCnUChmEom.1Q3yNs8axhEshgX1nGiG",
+        "role": "user",
+        "created_at": "2026-03-23 20:39:11"
+    },
+    {
+        "id": 6,
+        "username": "Иван123",
+        "password_hash": "$2y$10$CzHptT2\/RfAvzjvdCzcwae0rzwMBH9zVTSgiKe98VMLz5cwuoqCSi",
+        "role": "user",
+        "created_at": "2026-03-25 20:50:36"
+    },
+    {
+        "id": 7,
+        "username": "Антон123",
+        "password_hash": "$2y$10$C.nAv1iyNjOWnSzLTwZCq.IHRXUSyONWsGgD3pGXU801Ba3MuJrjm",
+        "role": "user",
+        "created_at": "2026-03-25 20:52:48"
+    },
+    {
+        "id": 8,
+        "username": "Гена",
+        "password_hash": "$2y$10$X4yHlk6hGcZVI\/CHMWIhye96.HQrcVCm5EjbI3qJJgQAC1LfemU26",
+        "role": "user",
+        "created_at": "2026-03-25 21:57:46"
+    },
+    {
+        "id": 9,
+        "username": "Марина Миронова",
+        "password_hash": "$2y$10$Qcim2AQ6HpevUc\/0mFcWqu6\/Rw0rP2WIvwj2AvzZYCD4YOovaCy2K",
+        "role": "user",
+        "created_at": "2026-03-25 22:18:08"
+    },
+    {
+        "id": 10,
+        "username": "Олег123",
+        "password_hash": "$2y$10$lVgY4Mdq3pO114Q3Tb7bd.LKEMaBlq1u71BT7F\/tfO1Nn70hPnIKa",
+        "role": "user",
+        "created_at": "2026-03-25 22:33:15"
+    },
+    {
+        "id": 11,
+        "username": "Алексей1",
+        "password_hash": "$2y$10$YU53TS6dKMT.eYVaWKa7aOk7Pc6YM.VfNpCjfbCMj4WebrGzMLPne",
+        "role": "user",
+        "created_at": "2026-03-25 22:40:07"
+    }
+]
